@@ -1,11 +1,23 @@
 'use client';
 import Link from 'next/link';
-import { seccionesTanaj } from '@/data/libros';
+import { seccionesTanaj } from '../data/libros';
+
+// Definimos la forma de los datos para que TypeScript no se queje
+interface Libro {
+  nombre: string;
+  id: string;
+  he: string;
+}
+
+interface Seccion {
+  titulo: string;
+  libros: Libro[];
+}
 
 export default function SelectorTanaj() {
   return (
     <div className="space-y-8">
-      {seccionesTanaj.map((seccion) => (
+      {(seccionesTanaj as Seccion[]).map((seccion) => (
         <div key={seccion.titulo}>
           <h3 className="text-sm font-bold text-stone-400 uppercase tracking-widest mb-4 border-b pb-2">
             {seccion.titulo}

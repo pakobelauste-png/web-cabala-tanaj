@@ -1,6 +1,6 @@
 import Link from 'next/link';
-// Si vas a usar Gematría aquí también, usa:
-// import Gematria from '@/components/Gematria';
+import SelectorTanaj from '@/components/SelectorTanaj'; //
+import Gematria from '@/components/Gematria';           //
 
 async function getJewishDate() {
   try {
